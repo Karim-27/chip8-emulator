@@ -1,0 +1,23 @@
+# Build output
+build/
+*.o
+chip8
+*.exe
+
+# Debugging leftovers
+core
+core.*
+vgcore.*
+*.dSYM/
+
+# Editor and OS clutter
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Secrets (should never be in this project, but just in case)
+.env
+*.pem
+*.key
