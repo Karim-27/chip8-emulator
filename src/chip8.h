@@ -10,6 +10,8 @@
 #define CHIP8_REGISTER_COUNT 16
 #define CHIP8_STACK_SIZE 16
 #define CHIP8_KEY_COUNT 16
+#define CHIP8_START_OF_PROGRAM 0x200
+#define CHIP8_FONT_START 0x50
 
 typedef struct Chip8 {
     uint8_t memory[CHIP8_MEMORY_SIZE]; // 4K memory
@@ -17,7 +19,7 @@ typedef struct Chip8 {
     uint16_t I; // Index register (only uses lower 12 bits)
     uint16_t pc; // Program counter (only uses lower 12 bits)
     uint16_t stack[CHIP8_STACK_SIZE]; // Stack for subroutine calls
-    uint8_t sp; // Stack pointer (points to top of stack)
+    uint8_t sp; // Stack pointer (index of top entry)
     uint8_t delay_timer; // Delay timer
     uint8_t sound_timer; // Sound timer
     uint8_t display[CHIP8_DISPLAY_HEIGHT][CHIP8_DISPLAY_WIDTH]; // Display buffer [y][x]
