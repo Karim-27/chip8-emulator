@@ -13,7 +13,7 @@
 #define CHIP8_START_OF_PROGRAM 0x200
 #define CHIP8_FONT_START 0x50
 
-typedef struct Chip8 {
+typedef struct {
     uint8_t memory[CHIP8_MEMORY_SIZE]; // 4K memory
     uint8_t V[CHIP8_REGISTER_COUNT]; // 16 registers (V0 to VF), (VF is the flag register)
     uint16_t I; // Index register (only uses lower 12 bits)
@@ -26,5 +26,6 @@ typedef struct Chip8 {
     uint16_t keys; // Key states (bitmask for 16 keys)
 } Chip8;
 
+void chip8_reset(Chip8* chip8);
 
 #endif // CHIP8_H
