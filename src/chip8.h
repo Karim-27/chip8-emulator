@@ -12,6 +12,7 @@
 #define CHIP8_KEY_COUNT 16
 #define CHIP8_START_OF_PROGRAM 0x200
 #define CHIP8_FONT_START 0x50
+#define CHIP8_MAX_ROM_SIZE (CHIP8_MEMORY_SIZE - CHIP8_START_OF_PROGRAM)
 
 typedef struct {
     uint8_t memory[CHIP8_MEMORY_SIZE]; // 4K memory
@@ -27,5 +28,6 @@ typedef struct {
 } Chip8;
 
 void chip8_reset(Chip8* chip8);
+int chip8_load_rom(Chip8* chip8, const char* file_path);
 
 #endif // CHIP8_H
